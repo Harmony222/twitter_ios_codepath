@@ -91,6 +91,11 @@ class HomeTableViewController: UITableViewController {
         
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
+            // https://stackoverflow.com/questions/28074679/how-to-set-image-in-circle-in-swift/43899481
+
+            cell.profileImageView.layer.masksToBounds = true
+            let radius = cell.profileImageView.frame.height/2
+            cell.profileImageView.layer.cornerRadius = radius
         }
         cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
@@ -98,6 +103,7 @@ class HomeTableViewController: UITableViewController {
 
         return cell
     }
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

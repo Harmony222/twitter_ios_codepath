@@ -8,16 +8,19 @@
 
 import UIKit
 
-class TweetViewController: UIViewController {
+class TweetViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var charCountLabel: UILabel!
+    @IBOutlet weak var tweetTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tweetTextView.becomeFirstResponder()
+        tweetTextView.delegate = self
+        charCountLabel.text = "280"
         // Do any additional setup after loading the view.
     }
-    
-    @IBOutlet weak var tweetTextView: UITextView!
-    
+        
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -33,6 +36,16 @@ class TweetViewController: UIViewController {
         } else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func textViewDidChange(_ tweetTextView: UITextView) {
+        let newText = tweetTextView.text!
+        print(newText.count)
+        let charCount = newText.count
+        let charLimit = 280
+        let remainingChars = charLimit - charCount
+//        let countStr = String(newText.count)
+        charCountLabel.text = String(remainingChars)
     }
     /*
     // MARK: - Navigation

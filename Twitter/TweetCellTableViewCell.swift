@@ -55,9 +55,7 @@ class TweetCellTableViewCell: UITableViewCell {
             })
         }
     }
-    
-
-    
+        
     func setFavorite(_ isFavorited:Bool) {
         favorited = isFavorited
         if (favorited) {
@@ -67,7 +65,7 @@ class TweetCellTableViewCell: UITableViewCell {
             favButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
         }
     }
-    
+      
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -173,13 +173,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining characters:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9u-UR-qT8">
+                                <rect key="frame" x="20" y="180" width="127" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bux-Tl-i3s">
+                                <rect key="frame" x="153" y="180" width="35" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vd9-wP-U1Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BvP-uH-JLN" firstAttribute="leading" secondItem="vd9-wP-U1Z" secondAttribute="leading" id="IvZ-aX-ItR"/>
+                            <constraint firstItem="g9u-UR-qT8" firstAttribute="leading" secondItem="vd9-wP-U1Z" secondAttribute="leading" constant="20" id="Mjh-LQ-vh6"/>
+                            <constraint firstItem="bux-Tl-i3s" firstAttribute="leading" secondItem="g9u-UR-qT8" secondAttribute="trailing" constant="6" id="THy-E8-Pva"/>
                             <constraint firstItem="BvP-uH-JLN" firstAttribute="top" secondItem="vd9-wP-U1Z" secondAttribute="top" id="cmK-N6-xOj"/>
                             <constraint firstItem="vd9-wP-U1Z" firstAttribute="trailing" secondItem="BvP-uH-JLN" secondAttribute="trailing" id="i6z-tR-y03"/>
+                            <constraint firstItem="g9u-UR-qT8" firstAttribute="top" secondItem="BvP-uH-JLN" secondAttribute="bottom" constant="8" id="nca-1F-jNe"/>
+                            <constraint firstItem="bux-Tl-i3s" firstAttribute="top" secondItem="BvP-uH-JLN" secondAttribute="bottom" constant="8" id="ydg-Di-stI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BJ3-FW-MpT">
@@ -197,6 +213,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="charCountLabel" destination="bux-Tl-i3s" id="cb1-sl-fD8"/>
                         <outlet property="tweetTextView" destination="BvP-uH-JLN" id="Ova-83-Dui"/>
                     </connections>
                 </viewController>
