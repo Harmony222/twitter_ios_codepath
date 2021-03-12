@@ -72,7 +72,7 @@
                                                 <constraint firstAttribute="height" constant="65" id="zQv-6O-LJo"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FVY-ZX-khG">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FVY-ZX-khG">
                                             <rect key="frame" x="93" y="11" width="301" height="41.333333333333336"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwY-EP-RLf">
@@ -112,10 +112,6 @@
                                                 <constraint firstAttribute="width" constant="62" id="IRY-0L-Q47"/>
                                             </constraints>
                                         </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hee-Qr-FVU">
-                                            <rect key="frame" x="48" y="110" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FVY-ZX-khG" firstAttribute="top" secondItem="K53-bG-mKZ" secondAttribute="topMargin" id="CL9-vQ-C4k"/>
@@ -132,12 +128,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="favButton" destination="QRI-uQ-y5t" id="mhd-Wr-m33"/>
-                                    <outlet property="mediaImageView" destination="hee-Qr-FVU" id="y4y-UL-Dan"/>
                                     <outlet property="profileImageView" destination="g3g-j7-ZqQ" id="gRl-lF-4EQ"/>
                                     <outlet property="retweetButton" destination="drs-t1-uGN" id="R9c-fY-m2v"/>
-                                    <outlet property="tweetCellContentView" destination="K53-bG-mKZ" id="R4s-cN-nPT"/>
                                     <outlet property="tweetContent" destination="RKC-ep-fVl" id="rqx-cd-nVw"/>
-                                    <outlet property="tweetStackView" destination="FVY-ZX-khG" id="V0a-a5-OKy"/>
                                     <outlet property="userNameLabel" destination="dwY-EP-RLf" id="qhk-lP-6Ce"/>
                                 </connections>
                             </tableViewCell>
