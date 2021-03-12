@@ -27,7 +27,7 @@ Here's a walkthrough of implemented user stories:
 Required functionality, character countdown, and user profile.
 <img src='http://g.recordit.co/syKAGW8YQH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-User sees embedded images in tweet if available:
+User sees embedded images in tweet if available.
 <img src='http://g.recordit.co/v8VTt7HIB2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 # Twitter - Part I
