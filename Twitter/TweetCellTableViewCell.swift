@@ -13,7 +13,10 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetContent: UILabel!
+    @IBOutlet weak var tweetStackView: UIStackView!
+    @IBOutlet weak var tweetCellContentView: UIView!
     
+    @IBOutlet weak var mediaImageView: UIImageView!
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favButton: UIButton!
     

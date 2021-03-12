@@ -32,7 +32,7 @@ class HomeTableViewController: UITableViewController {
     }
 
     @objc func loadTweets() {
-        numberOfTweet = 20
+        numberOfTweet = 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numberOfTweet]
         
@@ -51,7 +51,7 @@ class HomeTableViewController: UITableViewController {
     
     func loadMoreTweets() {
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        numberOfTweet = numberOfTweet + 20
+        numberOfTweet = numberOfTweet + 10
         let myParams = ["count": numberOfTweet]
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
             // empty tweet array first
@@ -100,6 +100,31 @@ class HomeTableViewController: UITableViewController {
         cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+
+        let entities = tweetArray[indexPath.row]["entities"] as! NSDictionary
+//        print(entities)
+        cell.mediaImageView.isHidden = false
+        if (entities["media"] != nil) {
+            let entityMedia = entities["media"] as! Array<Any>
+            if entityMedia.count > 0 {
+                let mediaUrls = entityMedia[0] as! NSDictionary
+                let mediaUrlStr = mediaUrls["media_url_https"] as! String
+//                print(tweetArray[indexPath.row])
+//                print(mediaUrlStr)
+                let mediaUrl = URL(string: (mediaUrlStr))!
+                cell.mediaImageView.frame = CGRect(x: 48, y: 110, width: 240, height: 128)
+                let constraints = [
+                    cell.mediaImageView.bottomAnchor.constraint(equalTo: cell.tweetCellContentView.bottomAnchor, constant: -4),
+                    cell.mediaImageView.topAnchor.constraint(equalTo: cell.tweetStackView.bottomAnchor, constant: 0)]
+                NSLayoutConstraint.activate(constraints)
+                cell.mediaImageView.setImageWith(mediaUrl)
+            }
+        }
+        else {
+            cell.mediaImageView.image = nil
+            cell.mediaImageView.isHidden = true
+            cell.mediaImageView.frame = CGRect(x: 48, y: 110, width: 0, height: 0)
+        }
 
         return cell
     }
