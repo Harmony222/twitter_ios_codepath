@@ -101,30 +101,31 @@ class HomeTableViewController: UITableViewController {
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
 
-//        let entities = tweetArray[indexPath.row]["entities"] as! NSDictionary
-////        print(entities)
-//        cell.mediaImageView.isHidden = false
-//        if (entities["media"] != nil) {
-//            let entityMedia = entities["media"] as! Array<Any>
-//            if entityMedia.count > 0 {
-//                let mediaUrls = entityMedia[0] as! NSDictionary
-//                let mediaUrlStr = mediaUrls["media_url_https"] as! String
-////                print(tweetArray[indexPath.row])
-////                print(mediaUrlStr)
-//                let mediaUrl = URL(string: (mediaUrlStr))!
-//                cell.mediaImageView.frame = CGRect(x: 48, y: 110, width: 240, height: 128)
-//                let constraints = [
-//                    cell.mediaImageView.bottomAnchor.constraint(equalTo: cell.tweetCellContentView.bottomAnchor, constant: -4),
-//                    cell.mediaImageView.topAnchor.constraint(equalTo: cell.tweetStackView.bottomAnchor, constant: 0)]
-//                NSLayoutConstraint.activate(constraints)
-//                cell.mediaImageView.setImageWith(mediaUrl)
-//            }
-//        }
-//        else {
-//            cell.mediaImageView.image = nil
-//            cell.mediaImageView.isHidden = true
-//            cell.mediaImageView.frame = CGRect(x: 48, y: 110, width: 0, height: 0)
-//        }
+        let entities = tweetArray[indexPath.row]["entities"] as! NSDictionary
+//        print(entities)
+        cell.mediaImageView.isHidden = false
+        if (entities["media"] != nil) {
+            let entityMedia = entities["media"] as! Array<Any>
+            if entityMedia.count > 0 {
+                let mediaUrls = entityMedia[0] as! NSDictionary
+                let mediaUrlStr = mediaUrls["media_url_https"] as! String
+//                print(tweetArray[indexPath.row])
+//                print(mediaUrlStr)
+                let mediaUrl = URL(string: (mediaUrlStr))!
+//                cell.mediaImageView.translatesAutoresizingMaskIntoConstraints = false
+                cell.mediaImageView.frame = CGRect(x: 45, y: 100, width: 240, height: 128)
+                let constraints = [
+                    cell.mediaImageView.bottomAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: cell.tweetStackView.bottomAnchor, multiplier: 4),
+                    cell.mediaImageView.bottomAnchor.constraint(equalTo: cell.tweetCellContentView.bottomAnchor, constant: -4)]
+                NSLayoutConstraint.activate(constraints)
+                cell.mediaImageView.setImageWith(mediaUrl)
+            }
+        }
+        else {
+            cell.mediaImageView.image = nil
+            cell.mediaImageView.isHidden = true
+            cell.mediaImageView.frame = CGRect(x: 45, y: 100, width: 0, height: 0)
+        }
 
         return cell
     }

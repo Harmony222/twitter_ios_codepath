@@ -112,6 +112,10 @@
                                                 <constraint firstAttribute="width" constant="62" id="IRY-0L-Q47"/>
                                             </constraints>
                                         </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G01-iv-m0T">
+                                            <rect key="frame" x="45" y="100" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FVY-ZX-khG" firstAttribute="top" secondItem="K53-bG-mKZ" secondAttribute="topMargin" id="CL9-vQ-C4k"/>
@@ -128,9 +132,12 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="favButton" destination="QRI-uQ-y5t" id="mhd-Wr-m33"/>
+                                    <outlet property="mediaImageView" destination="G01-iv-m0T" id="rYZ-oT-pYK"/>
                                     <outlet property="profileImageView" destination="g3g-j7-ZqQ" id="gRl-lF-4EQ"/>
                                     <outlet property="retweetButton" destination="drs-t1-uGN" id="R9c-fY-m2v"/>
+                                    <outlet property="tweetCellContentView" destination="K53-bG-mKZ" id="MdO-pi-NgK"/>
                                     <outlet property="tweetContent" destination="RKC-ep-fVl" id="rqx-cd-nVw"/>
+                                    <outlet property="tweetStackView" destination="FVY-ZX-khG" id="Jed-zG-YiS"/>
                                     <outlet property="userNameLabel" destination="dwY-EP-RLf" id="qhk-lP-6Ce"/>
                                 </connections>
                             </tableViewCell>
